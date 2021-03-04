@@ -1,78 +1,130 @@
-confirm("hello , this game about me");
-alert("write yup or y or nope or n"+" "+"be ready");
+confirm("Hello , this is a guess game.");
+alert("write yes or y or no or n"+" "+"lets go !");
+let summition=0;
 
 let userName=prompt("whats your name ?");
 console.log(userName)
-alert("Hello"+" "+userName);
- 
-let mycolor=prompt("my color is ,black? ");
-console.log(myColor)
-if(myCountry.toLowerCase()=='yup' || mycolor.toLowerCase()=='y'){
-    alert("Yes, this is true.");
- 
-}else if(mycolor.toLowerCase()=='nope' || mycolor.toLowerCase()=='n'){
-    alert("No, my color is black");
-}else{
-    alert("lets go to complete")
-}
+alert("Hello"+" "+userName)+ "welcome in my game.";
 
-let myStudy=prompt("my stude is computer sciense ");
-console.log(myStudy)
-if(myStudy.toLowerCase()=='yup' || myStudy.toLowerCase=='y'){
-    alert("yes youre right");
-}else if( myStudy.toLowerCase()=='nope' || myStudy.toLowerCase()=='n' ){
-    alert("noooo .wrong ");
-
-let myage=prompt("gusses ..is my age 28");
-console.log(myage)
-
-if(myage.toLowerCase()=='yup' || myage.toLowerCase()=='y'){
-    alert("actually that is right");
-}else if( myage.toLowerCase()=='nope' || myage.toLowerCase()=='n' ){
-    alert("you lost");
-}
-
-let myfood=prompt("shawrma ,is my lovely food?");
-console.log(myfood)
-
-if(myfood.toLowerCase()=='yup' || myfood.toLowerCase()=='y'){
-    alert("excellent");
-}else if( myfood.toLowerCase()=='nope' || myfood.toLowerCase()=='n' ){
-    alert("i am sad .its wrong ");
-    
-}else{
-    alert("try another question");
-}
-
-let mygraduation=prompt("2020.is date my graduation");
-console.log(mygraduation)
-if(mygraduation.toLowerCase()=='yup' || mygraduation.toLowerCase()=='y'){
-    alert("nooo.false");
-}else { ( mygraduation.toLowerCase()=='nope' || mygraduation.toLowerCase()=='n' )
-    alert("that's right");
-}
-
-let expect=prompt("input your expect ,how much i have sister?")
-console.log(expect)
-for(let i=0 ; i < 2 ; i++){
-    if (parseInt(expect)!=3){
-            alert("No, Please try again !");
-            let expect=prompt("no,expect between 1 to 3")
-            console.log(expect)
+function myColorFunc(){
+    let myColor=prompt("My favorite color is Black! ");
+    console.log(myColor)
+    if(myColor.toLowerCase()=='yes' || myColor.toLowerCase()=='y'){
+        alert("Yeeeeeh, excellent.");
+        summition=summition+1;
+    }else if(myColor.toLowerCase()=='no' || myColor.toLowerCase()=='n'){
+        alert("Oooooops, you didn't");
     }else{
-        (parseInt(expect)==3)
-                alert("Yes, this is true");
-                break;
-
-            }
+        alert("You didn't enter yes or no, get another question");
     }
-let fruits= ["kiwi", "orange", "banana", "mango", "fig", "apple"];
-let fruitsUser=prompt("Can you guess what my favourite fruite is ?")
-console.log(fruits)
-for(let z=1 ; z<fruits.length ;z++){
-    if (fruitsUser.toLowerCase()!==fruits[z]){
-        alert("No, Please try again !");
-        let fruitsUser=prompt("Can you guess what my favorite fruites  ?")
-        console.log(fruitsUser)
-}else{ (fruitsUser.toLowerCase()==fruits[z]) 
-            alert("Yes, true ");{
+}
+myColorFunc();
+
+
+function myStudyFun(){
+    let myStudy=prompt("My stude is computer sciense! ");
+    console.log(myStudy)
+    if(myStudy.toLowerCase()=='yes' || myStudy.toLowerCase=='y'){
+        alert("yes you are right");
+        summition=summition+1;
+    }else if( myStudy.toLowerCase()=='no' || myStudy.toLowerCase()=='n' ){
+        alert("noooo .wrong ");
+    }
+    else{
+        alert("faild, go to another question");
+    }
+    
+}
+myStudyFun();    
+
+
+function myAgeFun(){
+    let myage=prompt("Gusses ..is my age 28");
+    console.log(myage)
+    
+    if(myage.toLowerCase()=='yes' || myage.toLowerCase()=='y'){
+        alert("actually that is right");
+        summition=summition+1;
+    }else if( myage.toLowerCase()=='no' || myage.toLowerCase()=='n' ){
+        alert("you lost");
+    }else{
+        alert("faild, go to another question");
+    }   
+}
+myAgeFun();
+    
+
+function myFoodFun(){
+    let myfood=prompt("shawrma ,is my lovely food?");
+    console.log(myfood)
+    
+    if(myfood.toLowerCase()=='yes' || myfood.toLowerCase()=='y'){
+        alert("excellent");
+        summition=summition+1;
+    }else if( myfood.toLowerCase()=='no' || myfood.toLowerCase()=='n' ){
+        alert("I am sad .its wrong ");
+        
+    }else{
+        alert("faild, try another question");
+    }    
+}
+myFoodFun();
+
+function myGraduationFun(){
+    let mygraduation=prompt("2020.is date my graduation");
+    console.log(mygraduation)
+    if(mygraduation.toLowerCase()=='yes' || mygraduation.toLowerCase()=='y'){
+        alert("nooo.false");
+    }else if ( mygraduation.toLowerCase()=='no' || mygraduation.toLowerCase()=='n' ){
+        alert("that's right");
+        summition=summition+1;
+    }else{
+        alert("faild, go to another question");
+    }    
+}
+myGraduationFun();
+    
+function expectFun(){
+    let expect=prompt("Input your expect ,how much i have sister?")
+    console.log(expect)
+    for(let i=0 ; i < 4 ; i++){
+        if (parseInt(expect)!=3){
+                alert("No, Please try again !");
+                let expect=prompt("no,expect between 1 to 3")
+                console.log(expect)
+        }else{
+            (parseInt(expect)==3)
+                    alert("Yes, this is true");
+                    summition=summition+1;
+                    i=4;
+    
+                }
+        }    
+}
+expectFun();
+
+function fruitFun(){
+    let fruits= ["kiwi", "orange", "banana", "mango", "fig", "apple"];
+    let fruitsUser=prompt("Can you guess what my favourite fruite is ?")
+    console.log(fruitsUser)
+    for(let z=1; z<=fruits.length ;z++){
+        if (fruitsUser.toLowerCase()!==fruits[z]){
+            alert("OOOps, I do not like this fruit !");
+            let fruitsUser=prompt("Can you guess what my favorite fruites  ?")
+            console.log(fruitsUser)
+    }else if(fruitsUser.toLowerCase()==fruits[z]) {
+        alert("Yeeeeeeeeeh, I really like it.");
+    }
+    else{
+        alert("You didn't, try the game in another time.")
+    }
+    }    
+}
+fruitFun();
+
+function CountFun(){
+    let count=7;
+    count=count-summition;
+    alert("Hello my friend    "+userName+"   you get  "+ summition+" , you answered=  "+summition+"  , and didn't answered=  "+count);
+}
+CountFun();
